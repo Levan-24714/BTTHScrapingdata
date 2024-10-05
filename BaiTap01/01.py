@@ -26,7 +26,7 @@ time.sleep(2)
 ul_tags = driver.find_elements(By.TAG_NAME, "ul")
 print(len(ul_tags))
 
-#chọn thẻ ul thứ 21
+#chọn thẻ ul thứ 22
 ul_artist = ul_tags[21]
 
 #lay tat ca cac ther li owr trong ul
@@ -35,9 +35,7 @@ li_tags = ul_artist.find_elements(By.TAG_NAME, 'li')
 #Tạo danh sách các url
 links = [tag.find_element(By.TAG_NAME, "a").get_attribute("href") for tag in li_tags]
 
-
 #xuất thông tin
-
 for link in links:
     print(link)
 
@@ -49,7 +47,7 @@ ul1_tags = driver.find_elements(By.TAG_NAME, "ul")
 print(len(ul1_tags))
 #for index, value in enumerate(ul_tags):
     #print(f'Index: {index}, Value{value.text}')
-# chọn thẻ ul thứ 21
+# chọn thẻ ul thứ 22
 ul_artist = ul1_tags[21]
 
 # lay tat ca cac ther li owr trong ul
@@ -71,7 +69,6 @@ for link1 in artist_links:
     try:
         years_active = driver.find_element(By.XPATH, "//th[span[text()='Years active']]/following-sibling::td")
         years_active = years_active.text
-        #years_active = re.findall(r'[0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4}', years_active)[0]
     except:
         years_active = ""
     #tạo dictionary  thong tin của họa sĩ
