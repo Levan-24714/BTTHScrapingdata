@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
 import time
 #khởi tạo Webdriver
 driver = webdriver.Chrome()
@@ -15,7 +16,7 @@ time.sleep(2)
 # lấy tất cả các thẻ <a: các thẻ mình có thể click chuột>
 tags = driver.find_elements(By.TAG_NAME, "a")
 
-# tạo ra danh sách các liên kết lấy từng cái đường hr thẻ ở trong tag
+# tạo ra danh sách các liên kết lấy từng cái đường href thẻ ở trong tag
 links = [tag.get_attribute("href")for tag in tags]
 
 #xuất thông tin
